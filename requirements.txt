@@ -1,0 +1,8 @@
+# requirements.txt (Python 3.12)
+opencv-contrib-python==4.13.0.92
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.1.1
+matplotlib==3.11.0
+ipykernel>=6.29.0
+imageio-ffmpeg>=0.5.1
