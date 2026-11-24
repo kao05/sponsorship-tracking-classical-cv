@@ -24,6 +24,16 @@ Los modelos convencionales de visión por computadora son más eficientes que la
 6. **Cálculo de la exposición:** se registran todas las apariciones, se descartan las falsas y se calcula el tiempo total en pantalla y el área que ocupa.
 7. **Evaluación:** se comparan los resultados con mediciones hechas a mano y se visualizan en un video y en gráficas.
 
+## Alcance
+
+- **Marcas:** FC Barcelona (escudo), Spotify y Nike, en las variantes de color de las camisetas.
+- **Video:** resumen de mejores momentos de ~17 min, 1920×1080 a 25 fps, sin recortar.
+- **Exposición válida:** logo con área ≥ 40×40 px (a 1920 de ancho) durante ≥ 0.5 s
+  (13 fotogramas); los huecos de hasta 0.3 s se unen. Lo más pequeño se reporta como
+  "no medible".
+- **Zonas ignoradas:** la franja superior de 170 px, donde la transmisión coloca el
+  marcador y sus propios gráficos.
+
 ## 1. Arquitectura del proyecto
 
 ```text
