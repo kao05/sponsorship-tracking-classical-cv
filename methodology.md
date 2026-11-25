@@ -114,4 +114,4 @@ Se aplica un filtrado temporal para eliminar detecciones espurias aisladas (ruid
 
 ## Evaluación cuantitativa y visualización de resultados
 
-Los intervalos temporales y coordenadas generados por el pipeline se contrastan contra las anotaciones manuales de referencia en la primera parte etiquetadas en CVAT o Label Studio para calcular Precisión, Recall, IoU promedio y el error absoluto de tiempo de exposición
+Los intervalos temporales y coordenadas generados por el pipeline se contrastan contra las anotaciones manuales de referencia en la primera parte anotadas a mano (intervalos en CSV y cajas dibujadas con cv2.selectROI) para calcular Precisión, Recall, IoU promedio y el error absoluto de tiempo de exposición

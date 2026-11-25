@@ -27,6 +27,10 @@ REF_HEIGHT = 1080
 EXCLUDE_TOP_PX = 170
 EXCLUDE_TOP_FRAC = EXCLUDE_TOP_PX / REF_HEIGHT   # para otras resoluciones
 
+# Zona del escudo en el rótulo de gol (x0, y0, x1, y1) a REF_WIDTH x REF_HEIGHT.
+# NO se excluye: sirve para etiquetar la superficie como "rotulo" y no "escena".
+ROTULO_GOL_ROI_PX = (1500, 860, 1680, 1020)
+
 # --- Marcas (una entrada por marca, varias variantes de color) -----------
 # Los archivos viven planos en data/logos/ como marca_variante.png
 # fondo_solo_borde=True: el logo tiene zonas blancas propias (ver logo_loader)
@@ -46,18 +50,18 @@ BRANDS = {
         "variantes": ["nike_clasico.png", "nike_alternativo.png"],
         "fondo_solo_borde": False,
     },
-    # Reserva, pendiente de confirmar que aparece en el video:
-    # "kobe": {"nombre": "Kobe", "variantes": ["Kobe.png"], "fondo_solo_borde": False},
+    # Reserva: "kobe": {"nombre": "Kobe", "variantes": ["Kobe.png"], "fondo_solo_borde": False},
 }
 
 # --- Exposición válida (INICIAL) ------------------------------------------
 MIN_LOGO_AREA_PX = 40 * 40    # a REF_WIDTH; se escala con (ancho_real / REF_WIDTH)**2
 MIN_DURATION_S = 0.5          # duración mínima de una aparición válida
 MAX_GAP_S = 0.3               # huecos menores se unen a la misma aparición
+MIN_DURATION_FRAMES = math.ceil(MIN_DURATION_S * TARGET_FPS)   # 13
+MAX_GAP_FRAMES = math.ceil(MAX_GAP_S * TARGET_FPS)             # 8
 
-# Equivalentes en fotogramas (13 y 8 a 25 fps)
-MIN_DURATION_FRAMES = math.ceil(MIN_DURATION_S * TARGET_FPS)
-MAX_GAP_FRAMES = math.ceil(MAX_GAP_S * TARGET_FPS)
+# Etiquetas de tamaño de la anotación (ancho del logo en px a REF_WIDTH)
+TAMANOS_PX = {"medio": 40, "grande": 100}   # menor a 40 = "chico", no se anota
 
 # --- Detector base: SIFT + Lowe + RANSAC (Etapa 3, INICIAL) ---------------
 SIFT_LOGO_WIDTH = 160         # ancho al que se redimensiona el logo antes de SIFT

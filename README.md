@@ -45,7 +45,7 @@ sponsorship-tracking/
 │   ├── videos/                 # videos originales
 │   ├── processed/              # videos normalizados a FPS constante
 │   ├── logos/                  # una imagen de referencia por marca
-│   └── annotations/            # ground truth: intervalos (CSV) y cajas muestreadas
+│   └── annotations/            # intervalos.csv, segmentos.csv, cajas.csv
 ├── outputs/
 │   ├── videos/                 # videos con contornos e IDs dibujados
 │   ├── telemetry/              # CSV por video (frame, timestamp, track_id, sponsor, bbox, inliers)
@@ -54,6 +54,7 @@ sponsorship-tracking/
 ├── scripts/
 │   ├── prepare_video.py        # Etapa 2: normaliza el video
 │   ├── run_pipeline.py         # Etapas 3 a 6: corre el sistema
+|   ├── annotate_boxes.py
 │   └── evaluate.py             # Etapa 7: métricas y comparación
 ├── src/sponsortrack/
 │   ├── config.py               # umbrales y parámetros en un solo lugar
